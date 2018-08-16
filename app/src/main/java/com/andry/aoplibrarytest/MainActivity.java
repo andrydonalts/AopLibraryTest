@@ -6,8 +6,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.andry.viewmonitor.LogDebug;
-
 public class MainActivity extends AppCompatActivity {
 
     private View relativeRoot;
@@ -31,19 +29,14 @@ public class MainActivity extends AppCompatActivity {
         view3 = findViewById(R.id.linear_view3);
         text = findViewById(R.id.text);
 
-        Log.d("relativeRoot", Integer.toString(relativeRoot.getId()));
-        Log.d("viewTop", Integer.toString(viewTop.getId()));
-        Log.d("linear", Integer.toString(linear.getId()));
-        Log.d("view1", Integer.toString(view1.getId()));
-        Log.d("view2", Integer.toString(view2.getId()));
-        Log.d("view3", Integer.toString(view3.getId()));
-        Log.d("text", Integer.toString(text.getId()));
+        Log.d("TAG relativeRoot", Integer.toString(relativeRoot.getId()));
+        Log.d("TAG viewTop", Integer.toString(viewTop.getId()));
+        Log.d("TAG linear", Integer.toString(linear.getId()));
+        Log.d("TAG view1", Integer.toString(view1.getId()));
+        Log.d("TAG view2", Integer.toString(view2.getId()));
+        Log.d("TAG view3", Integer.toString(view3.getId()));
+        Log.d("TAG text", Integer.toString(text.getId()));
 
-        heyMethod();
-    }
-
-    public void heyMethod() {
-        LogDebug.log("heyMethod");
     }
 
     @Override

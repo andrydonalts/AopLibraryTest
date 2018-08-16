@@ -16,32 +16,8 @@ import java.util.Arrays;
 @Aspect
 public class ViewMonitor {
 
-    @Pointcut("execution(* *(..))")
-    private void callAllMethods() {}
-
     @Pointcut("execution(* android.app.Activity+.onCreate(..))")
     private void onCreatePointcut() {}
-
-    @Pointcut("execution(* com.andry.aoplibrarytest.MainActivity.onCreate(..))")
-    private void logOnCreateWithPackage() {}
-
-    @Pointcut("execution(* *.on*(..))")
-    private void logAllOnMethods() {}
-
-//    @Before("logOnCreateWithPackage()")
-//    public void logOnCreateWithPackAspect(JoinPoint jp) {
-//        System.out.println("-> library before onCreate with package");
-//    }
-
-//    @Before("callAllMethods()")
-//    public void logAllMethodAspect(JoinPoint jp) {
-//        System.out.println("-> Library Before each method - " + jp.getSignature());
-//    }
-
-//    @Before("logAllOnMethods()")
-//    public void logAllOnMethodsAspect(JoinPoint jp) {
-//        System.out.println("-> Library before on method " + jp.getSignature());
-//    }
 
     @After("onCreatePointcut()")
     public void logAfterOnCreateAspect(JoinPoint jp) {
@@ -68,7 +44,7 @@ public class ViewMonitor {
         view.getLocationOnScreen(locationOnScreen);
         view.getLocationInWindow(locationInWindow);
 
-        Log.d("Aspect - toNextView", "==== " + Integer.toString(view.getId()) +
+        Log.d("TAG Aspect - toNextView", "==== " + Integer.toString(view.getId()) +
                 " locationOnScreen " + Arrays.toString(locationOnScreen) +
                 " locationInWindow " + Arrays.toString(locationInWindow) +
                 " height " + view.getMeasuredHeight() + " width " + view.getMeasuredWidth());
